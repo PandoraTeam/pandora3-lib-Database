@@ -6,6 +6,10 @@ use PDO;
 use PDOException;
 use Pandora3\Core\Interfaces\DatabaseConnectionInterface;
 
+/**
+ * Class DatabaseConnection
+ * @package Pandora3\Libs\Database
+ */
 class DatabaseConnection implements DatabaseConnectionInterface {
 
 	/** @var array $params */
