@@ -18,6 +18,9 @@ class DatabaseConnection implements DatabaseConnectionInterface {
 	/** @var PDO $connection */
 	protected $connection;
 
+	/**
+	 * @param array $params
+	 */
 	public function __construct(array $params) {
 		$this->params = $params;
 		$this->connect();
