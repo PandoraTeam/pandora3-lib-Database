@@ -1,9 +1,9 @@
 <?php
 namespace Pandora3\Libs\Database;
 
-use Pandora3\Libs\Database\Exception\ConnectionFailedException;
 use PDO;
 use PDOException;
+use Pandora3\Libs\Database\Exceptions\ConnectionFailedException;
 use Pandora3\Core\Interfaces\DatabaseConnectionInterface;
 
 /**
@@ -42,7 +42,7 @@ class DatabaseConnection implements DatabaseConnectionInterface {
 				PDO::MYSQL_ATTR_INIT_COMMAND => "set names $charset",
 			]);
 		} catch (PDOException $ex) {
-			throw new ConnectionFailedException('Failed to connect database', E_ERROR, $ex);
+			throw new ConnectionFailedException($ex);
 		}
 	}
 
@@ -50,6 +50,9 @@ class DatabaseConnection implements DatabaseConnectionInterface {
 		$this->connection = null;
 	}
 
+	/**
+	 * @return PDO
+	 */
 	public function getConnection(): PDO {
 		return $this->connection;
 	}
