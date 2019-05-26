@@ -13,8 +13,5 @@
 	],
 	"extra": {
 		"installer-name": "Database"
-	},
-	"require": {
-		"composer/installers": "~1.0"
 	}
 }
